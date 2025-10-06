@@ -1,1 +1,443 @@
 # Infotech-Services-Intern-Test
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Resume Deserves A Yes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #000;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header Styles */
+        header {
+            border-bottom: 1px solid #e5e5e5;
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #f43f5e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-circle {
+            width: 24px;
+            height: 24px;
+            border: 2px solid white;
+            border-radius: 50%;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: #737373;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #737373;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:first-child {
+            color: #000;
+        }
+
+        nav a:hover {
+            color: #f43f5e;
+        }
+
+        .btn {
+            background: #f43f5e;
+            color: white;
+            border: none;
+            padding: 0.625rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #e11d48;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #f43f5e;
+            border: 2px solid #f43f5e;
+        }
+
+        .btn-outline:hover {
+            background: rgba(244, 63, 94, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #fce7f3;
+            padding: 4rem 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text .highlight {
+            color: #f43f5e;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+        }
+
+        .hero-text p {
+            max-width: 500px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: #000;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-image-container {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            display: block;
+        }
+
+        .rating-card, .stats-card {
+            position: absolute;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .rating-card {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .rating-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #f43f5e;
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .star {
+            width: 1rem;
+            height: 1rem;
+            color: #fbbf24;
+            fill: #fbbf24;
+        }
+
+        .rating-text {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .stats-card {
+            bottom: 25%;
+            right: 0;
+        }
+
+        .stats-icon {
+            font-size: 2.5rem;
+        }
+
+        .stats-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .stats-text {
+            font-size: 0.875rem;
+            color: #737373;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background: #fff;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .features-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #737373;
+            margin-bottom: 1rem;
+        }
+
+        .features-title {
+            font-size: 2rem;
+            font-weight: bold;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-weight: bold;
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-description {
+            font-size: 0.875rem;
+            color: #737373;
+            line-height: 1.6;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rating-card, .stats-card {
+                position: static;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <div class="logo-circle"></div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">COMPANY</span>
+                        <span class="logo-subtitle">business tagline</span>
+                    </div>
+                </div>
+                
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Our Services</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">FAQ</a>
+                </nav>
+                
+                <button class="btn">Get A Quote</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        Your Resume <br>
+                        <span class="highlight">Deserves A Yes</span> Let's<br>
+                        Make It Happen
+                    </h1>
+                    
+                    <p>
+                        If Your Resume Isn't Getting Responses, It's Time For An Upgrade. 
+                        Get An ATS-Optimized Resume Crafted By HR Experts To Help You 
+                        Land More Interviews. Our Resumes Are Designed To Get Your Foot 
+                        In The Door And Place Your Name At The Top Of The Shortlist.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn btn-outline">RESUME PAKAGES</button>
+                        <button class="btn">CONTACT US</button>
+                    </div>
+                </div>
+                
+                <div class="hero-image-container">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80" 
+                         alt="Student with backpack" 
+                         class="hero-image">
+                    
+                    <div class="rating-card">
+                        <div class="rating-number">4.9</div>
+                        <div>
+                            <div class="stars">
+                                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <div class="rating-text">Instructor Rating</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-card">
+                        <div class="stats-icon">🎓</div>
+                        <div>
+                            <div class="stats-number">260+</div>
+                            <div class="stats-text">Online Resume<br>Created</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-header">
+                <div class="features-label">What You Get</div>
+                <h2 class="features-title">
+                    You're Not Just Another Applicant And Your Resume Shouldn't Look Like One
+                </h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3 class="feature-title">A Resume That Passes ATS Filters</h3>
+                    <p class="feature-description">
+                        Get a professionally written, keyword-optimized resume that passes ATS and catches 
+                        the eye of recruiters in top-tier companies—not just rejection piles.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✉️</div>
+                    <h3 class="feature-title">A Cover Letter That Gets Read</h3>
+                    <p class="feature-description">
+                        Stand out with a cover letter that speaks beyond the role and reflects your strengths.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3 class="feature-title">A LinkedIn Profile That Works For You</h3>
+                    <p class="feature-description">
+                        Attract the right eyes, start conversations, and show up in recruiter searches.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Interview Confidence</h3>
+                    <p class="feature-description">
+                        Interview preparation with real HR professionals so you can speak clearly, confidently, 
+                        and convincingly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
